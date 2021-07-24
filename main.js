@@ -10,6 +10,7 @@ let optionValue = +selectBox.value;
 container.addEventListener('click', function (e) {
   const seat = e.target.closest('.seat');
   if (!seat) return;
+  if (seat.classList.contains('occupied')) return;
   if (seat.classList.contains('selected')) {
     seat.classList.remove('selected');
     +count.textContent--;
